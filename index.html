@@ -127,7 +127,9 @@
                                             console.log('Success!', response)
                                             swal("Good job!", "Your response has been recorded!", "success")
                                                 .then((value) => {
+                                                    google.accounts.id.disableAutoSelect();
                                                     location.reload();
+
                                                 });
 
                                             // swal("Good job!", "Your response has been recorded!", "success");
