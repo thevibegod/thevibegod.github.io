@@ -127,16 +127,16 @@
                                             console.log('Success!', response)
                                             swal("Good job!", "Your response has been recorded!", "success").then((value) => {
                                                 var myWindow = window.open("https://accounts.google.com/logout", "myWindow", "width=200,height=100");
-                                            setTimeout(function(){ myWindow.close() },4000);
-                                            setTimeout(function(){ location.reload(); },5000);
-                                                    // location.reload();
-                                                });
+                                                setTimeout(function () { myWindow.close() }, 4000);
+                                                setTimeout(function () { location.reload(); }, 5000);
+                                                // location.reload();
+                                            });
 
                                             // swal("Good job!", "Your response has been recorded!", "success");
                                             document.getElementById("form").reset();
                                             var myWindow = window.open("https://accounts.google.com/logout", "myWindow", "width=200,height=100");
-                                            setTimeout(function(){ myWindow.close() },4000);
-                                            setTimeout(function(){ location.reload(); },5000);
+                                            setTimeout(function () { myWindow.close() }, 4000);
+                                            setTimeout(function () { location.reload(); }, 5000);
                                         }
                                     })
                                     .catch(error => {
@@ -194,6 +194,9 @@
             else {
                 // gapi.auth2.getAuthInstance().signOut()
                 swal('oh noes!', 'Use official KI college email to login.', 'error')
+                var myWindow = window.open("https://accounts.google.com/logout", "myWindow", "width=200,height=100");
+                // setTimeout(function () { myWindow.close() }, 4000);
+                // setTimeout(function () { location.reload(); }, 5000);
                 // alert('Use official college email to login.')
             }
         }
