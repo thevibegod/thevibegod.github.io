@@ -125,16 +125,16 @@
                                         button_element.textContent = "Done!"
                                         if (response.status == 200) {
                                             console.log('Success!', response)
-                                            swal("Good job!", "Your response has been recorded!", "success")
-                                                .then((value) => {
-                                                    google.accounts.id.disableAutoSelect();
+                                            swal("Good job!", "Your response has been recorded!", "success").then((value) => {
+                                                    alert("https://accounts.google.com/logout")
                                                     location.reload();
-
                                                 });
 
                                             // swal("Good job!", "Your response has been recorded!", "success");
                                             document.getElementById("form").reset();
-                                            // location.reload();
+                                            var myWindow = window.open("https://accounts.google.com/logout", "myWindow", "width=200,height=100");
+                                            setTimeout(function(){ myWindow.close() },4000);
+                                            location.reload();
                                         }
                                     })
                                     .catch(error => {
@@ -187,9 +187,10 @@
                 document.getElementById('sign-in-box').style.display = 'none';
                 document.getElementById('form').style.display = 'block';
                 document.getElementById('email').value = email;
+
             }
             else {
-                gapi.auth2.getAuthInstance().signOut()
+                // gapi.auth2.getAuthInstance().signOut()
                 swal('oh noes!', 'Use official KI college email to login.', 'error')
                 // alert('Use official college email to login.')
             }
